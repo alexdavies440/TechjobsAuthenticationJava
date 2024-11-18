@@ -30,6 +30,4 @@ public class User extends AbstractEntity {
     public @NotNull String getUsername() {
         return username;
     }
-
-
 }
