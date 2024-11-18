@@ -1,6 +1,5 @@
 package org.launchcode.techjobsauth.models;
 
-import com.mysql.cj.conf.StringProperty;
 import jakarta.persistence.Entity;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
