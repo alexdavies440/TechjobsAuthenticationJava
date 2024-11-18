@@ -1,5 +1,3 @@
-<!--4.2-->
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
@@ -11,22 +9,24 @@
 
 <form method="post" style="max-width:600px;">
     <div class="form-group">
-        <label th:for="username">Username</label>
-        <input class="form-control" th:field="${registerFormDTO.username}" />
+        <label>Username
+            <input class="form-control" th:field="${registerFormDTO.username}" />
+        </label>
         <span th:errors="${registerFormDTO.username}" class="error"></span>
     </div>
     <div class="form-group">
-        <label th:for="password">Password</label>
-        <input class="form-control" th:field="${registerFormDTO.password}" type="password"/>
+        <label>Password
+            <input class="form-control" th:field="${registerFormDTO.password}" type="password"/>
+        </label>
         <span th:errors="${registerFormDTO.password}" class="error"></span>
     </div>
     <div class="form-group">
-        <label th:for="verify">Verify Password</label>
-        <input class="form-control" th:field="${registerFormDTO.verifyPassword}" type="password"/>
-        <span th:errors="${registerFormDTO.verifyPassword}" class="error"></span>
+        <label>Verify Password
+            <input class="form-control" th:field="${registerFormDTO.verifyPassword}" type="password"/>
+        </label>
     </div>
 
-    <input type="submit" value="Register Account" />
+    <input type="submit" value="Register" />
 </form>
 
 </body>

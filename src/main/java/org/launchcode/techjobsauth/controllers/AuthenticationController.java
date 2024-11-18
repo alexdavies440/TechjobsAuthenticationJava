@@ -19,6 +19,7 @@ import java.util.Optional;
 
 @Controller
 public class AuthenticationController {
+
     @Autowired
     UserRepository userRepository;
 
@@ -61,13 +62,13 @@ public class AuthenticationController {
                                           Errors errors,
                                           Model model) {
         if (errors.hasErrors()) {
-            model.addAttribute("errors", errors);
+            model.addAttribute("title", "Register");
             return "register";
         }
 
-        User existsingUser = userRepository.findByUsername(registerFormDTO.getUsername());
+        User existingUser = userRepository.findByUsername(registerFormDTO.getUsername());
 
-        if (existsingUser != null) {
+        if (existingUser != null) {
             errors.rejectValue("username",
                     "username.alreadyexists",
                     "A user with that username already exists. Try being more creative?");
