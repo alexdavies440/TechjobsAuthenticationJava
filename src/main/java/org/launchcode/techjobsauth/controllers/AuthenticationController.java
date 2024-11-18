@@ -99,6 +99,7 @@ public class AuthenticationController {
         return "login";
     }
 
+    // 5.
     @PostMapping("/login")
     public String login(@ModelAttribute @Valid LoginFormDTO loginFormDTO,
                         Errors errors,
@@ -130,5 +131,12 @@ public class AuthenticationController {
         setUserInSession(request.getSession(), theUser);
 
         return "redirect:";
+    }
+
+    // 6.
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        request.getSession().invalidate();
+        return "redirect:/login";
     }
 }
