@@ -8,8 +8,8 @@
 
 <div class="container body-content">
   <h2>TechJobs</h2>
-  <ul>
-    <li th:each="job : ${jobs}">
+  <ul class="list-group-flush">
+    <li class="list-group-item" th:each="job : ${jobs}">
       <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>
     </li>
   </ul>
